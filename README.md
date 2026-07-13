@@ -55,7 +55,7 @@ Then in GitHub:
 - Source: `Deploy from a branch`
 - Branch: `gh-pages` and folder `/ (root)`
 
-If your repository name is different, update `BASE_PATH` in `package.json` script `build:gh`.
+If your repository name is different, update `base` in `vite.config.ts`.
 
 ## Project Structure
 
