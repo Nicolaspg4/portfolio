@@ -35,6 +35,28 @@ npm run build
 npm run preview
 ```
 
+## Deploy to GitHub Pages
+
+This project is configured to deploy to a repository page (`https://<user>.github.io/portfolio/`).
+
+1. Push your code to GitHub in a repo named `portfolio`.
+2. Run:
+
+```bash
+npm run deploy
+```
+
+This will:
+- Build with the correct base path (`/portfolio/`)
+- Publish `dist/` to the `gh-pages` branch
+
+Then in GitHub:
+- Go to `Settings` -> `Pages`
+- Source: `Deploy from a branch`
+- Branch: `gh-pages` and folder `/ (root)`
+
+If your repository name is different, update `BASE_PATH` in `package.json` script `build:gh`.
+
 ## Project Structure
 
 ```text
