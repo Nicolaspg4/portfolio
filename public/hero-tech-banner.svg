@@ -1,0 +1,32 @@
+<svg width="1200" height="520" viewBox="0 0 1200 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="70" y1="40" x2="1120" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2B1268"/>
+      <stop offset="0.5" stop-color="#14306E"/>
+      <stop offset="1" stop-color="#0F3A44"/>
+    </linearGradient>
+    <linearGradient id="shield" x1="410" y1="86" x2="790" y2="434" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22D3EE"/>
+      <stop offset="1" stop-color="#A3E635"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="520" rx="36" fill="url(#bg)"/>
+
+  <g opacity="0.3">
+    <circle cx="190" cy="110" r="130" fill="#7C3AED"/>
+    <circle cx="1030" cy="110" r="120" fill="#22D3EE"/>
+    <circle cx="980" cy="430" r="140" fill="#A3E635"/>
+  </g>
+
+  <g>
+    <path d="M600 92L790 158V273C790 359 714 428 600 456C486 428 410 359 410 273V158L600 92Z" fill="#101D4A" stroke="url(#shield)" stroke-width="5"/>
+    <path d="M600 150L725 193V272C725 327 678 377 600 401C522 377 475 327 475 272V193L600 150Z" fill="#172965" stroke="#2EDCE8" stroke-opacity="0.7"/>
+
+    <path d="M558 255L530 282L585 336L670 251" stroke="#A3E635" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <text x="70" y="430" fill="#E3EAFF" font-family="Sora, sans-serif" font-size="46" font-weight="700">
+    Ingeniería sólida, mentalidad global
+  </text>
+</svg>

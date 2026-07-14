@@ -12,17 +12,18 @@ const ProjectsSection = () => {
         description="Proyectos donde combino todas las herramientas que he ido aprendiendo para construir productos que intento sean lo mejor posible."
       />
 
-      <motion.div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-        {projects.map((project, index) => (
-          <motion.article
-            key={project.id}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.22 }}
-            transition={{ type: 'spring', stiffness: 145, damping: 15, delay: index * 0.05 }}
-            whileHover={{ y: -8, scale: 1.01 }}
-            className="group relative overflow-hidden rounded-2xl border border-[var(--color-glass-border)] bg-[var(--color-glass)] p-5 shadow-[0_8px_35px_var(--color-shadow)] backdrop-blur-2xl"
-          >
+      <div className="relative left-1/2 w-screen -translate-x-1/2 px-4 sm:px-6 lg:px-10">
+        <motion.div className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-5">
+          {projects.map((project, index) => (
+            <motion.article
+              key={project.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.22 }}
+              transition={{ type: 'spring', stiffness: 145, damping: 15, delay: index * 0.05 }}
+              whileHover={{ y: -8, scale: 1.01 }}
+              className="group relative h-full overflow-hidden rounded-2xl border border-[var(--color-glass-border)] bg-[var(--color-glass)] p-5 shadow-[0_8px_35px_var(--color-shadow)] backdrop-blur-2xl"
+            >
             <div className="pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100">
               <div className="absolute top-2 left-4 h-20 w-32 rounded-full bg-[var(--color-violet-glow)] blur-2xl" />
               <div className="absolute right-2 bottom-2 h-20 w-32 rounded-full bg-[var(--color-cyan-glow)] blur-2xl" />
@@ -73,9 +74,10 @@ const ProjectsSection = () => {
                 </a>
               </div>
             </div>
-          </motion.article>
-        ))}
-      </motion.div>
+            </motion.article>
+          ))}
+        </motion.div>
+      </div>
     </section>
   )
 }
