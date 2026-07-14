@@ -47,6 +47,8 @@ const stackIcons: Record<string, LucideIcon> = {
 }
 
 const HeroSection = ({ onNavigate }: HeroSectionProps) => {
+  const cvUrl = `${import.meta.env.BASE_URL}cv-nicolas-perez-gomez.pdf`
+
   return (
     <section id="hero" className="scroll-mt-28 pt-28 pb-10 md:pt-34 md:pb-16">
       <div className="grid items-center gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:gap-12">
@@ -100,7 +102,7 @@ const HeroSection = ({ onNavigate }: HeroSectionProps) => {
             </button>
 
             <a
-              href="/cv-nicolas-perez-gomez.pdf"
+              href={cvUrl}
               download="CV-Nicolas-Perez-Gomez.pdf"
               className="inline-flex items-center gap-2 rounded-full border border-[var(--color-cyan)]/70 bg-[var(--color-glass)] px-6 py-3 text-sm font-semibold text-[var(--color-ink)] shadow-[0_0_18px_var(--color-cyan-glow)] transition hover:scale-[1.02]"
             >
