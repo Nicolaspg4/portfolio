@@ -56,8 +56,8 @@ export const projects: Project[] = [
     description:
       'Desarrollo e implementación de un modelo de aprendizaje automático relacional basado en grafos para la recomendación de libros, utilizando un dataset de Goodreads. El proyecto abarcó todo el pipeline de datos, desde la ingesta y el preprocesamiento con pandas y expresiones regulares (re), hasta la construcción y análisis de un grafo dirigido mediante networkx',
     stack: ['Python', 'NetworkX', 'Pandas', 'Scikit-Learn', 'Matplotlib'],
-    githubUrl: 'https://github.com/Nicolaspg4/IA-Aprendizaje-Autom-tico-Relacional.git',
-    liveUrl: 'https://ai-resume-lab.vercel.app/',
+    githubUrl: 'https://github.com/Nicolaspg4/Aprendizaje-Automatico-Relacional.git',
+    liveUrl: 'https://aprendizaje-automatico-relacional-a3emndkwwpryunttu2tura.streamlit.app/',
   },
   {
     id: 'stream-pulse',
@@ -65,8 +65,8 @@ export const projects: Project[] = [
     description:
       'Diseño, desarrollo y despliegue de una plataforma web optimizada para albergar y exhibir proyectos de Data Science, Machine Learning y desarrollo de software. El sitio fue creado desde cero priorizando la velocidad de carga, la responsividad y una experiencia de usuario limpia, sirviendo como hub central de mi marca profesional.',
     stack: ['React', 'Framer Motion', 'Node', 'TypeScript', 'Tailwind CSS'],
-    githubUrl: 'https://github.com/nicpergom/stream-pulse',
-    liveUrl: 'https://stream-pulse.vercel.app/',
+    githubUrl: 'https://github.com/Nicolaspg4/portfolio',
+    liveUrl: 'https://nicolaspg4.github.io/portfolio/',
   },
 ]
 
