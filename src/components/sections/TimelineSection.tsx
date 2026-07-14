@@ -8,7 +8,7 @@ const TimelineSection = () => {
     <section id="timeline" className="scroll-mt-28 py-16 md:py-24">
       <SectionHeading
         eyebrow="Journey"
-        title="Mi recorrido académico y profesional en modo build."
+        title="Mi recorrido académico y profesional"
         description="Cada etapa representa crecimiento técnico, adaptabilidad y foco en convertir conocimiento en impacto real."
       />
 
