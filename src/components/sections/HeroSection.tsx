@@ -200,12 +200,12 @@ const HeroSection = ({ onNavigate }: HeroSectionProps) => {
         >
           <span className="inline-flex items-center gap-2 rounded-full border border-[var(--color-glass-border)] bg-[var(--color-glass)] px-4 py-2 text-xs font-semibold tracking-[0.12em] text-[var(--color-cyan)] uppercase shadow-[0_8px_30px_var(--color-shadow)]">
               <BrainCircuit size={14} />
-            Ingeniero de Software en prácticas
+            En prácticas
           </span>
 
           <div className="space-y-4">
-            <h1 className="text-balance text-4xl leading-tight font-semibold text-[var(--color-ink)] [font-family:var(--font-heading)] sm:text-5xl lg:text-6xl">
-              Nicolás Pérez Gómez
+            <h1 className="text-balance text-4xl leading-tight font-semibold text-[var(--color-ink)] [font-family:var(--font-heading)] sm:text-5xl lg:text-5xl">
+                INGENIERO DE SOFTWARE | DESARROLLADOR WEB
             </h1>
             <p className="max-w-2xl text-base leading-relaxed text-[var(--color-muted)] sm:text-lg">
               Mi enfoque profesional se centra en el desarrollo de servicios web, combinando una sólida base de ingeniería de software con la integración avanzada de herramientas y modelos de Inteligencia Artificial (IA)
@@ -294,7 +294,7 @@ const HeroSection = ({ onNavigate }: HeroSectionProps) => {
           </motion.div>
         </motion.div>
 
-        <div className="space-y-6 lg:mt-10">
+        <div className="space-y-6 lg:mt-3">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

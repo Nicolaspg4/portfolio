@@ -28,6 +28,20 @@ npm install
 npm run dev
 ```
 
+### Contact Form (Formspree)
+
+To receive real messages from the contact form:
+
+1. Create a form at [Formspree](https://formspree.io/).
+2. Copy `.env.example` to `.env.local`.
+3. Set your endpoint:
+
+```bash
+VITE_FORMSPREE_ENDPOINT=https://formspree.io/f/your_form_id
+```
+
+4. Restart the dev server.
+
 Production build:
 
 ```bash

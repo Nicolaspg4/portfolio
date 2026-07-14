@@ -36,11 +36,14 @@ const socialIcons: Record<SocialLink['platform'], LucideIcon> = {
 }
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+const FORMSPREE_ENDPOINT = import.meta.env.VITE_FORMSPREE_ENDPOINT as string | undefined
 
 const ContactSection = () => {
   const [form, setForm] = useState<ContactFormState>(initialFormState)
   const [errors, setErrors] = useState<ContactFormErrors>({})
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState<string | null>(null)
 
   const hasErrors = useMemo(() => Object.keys(errors).length > 0, [errors])
 
@@ -66,19 +69,54 @@ const ContactSection = () => {
     return nextErrors
   }
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
 
     const nextErrors = validate(form)
     setErrors(nextErrors)
     setIsSubmitted(false)
+    setSubmitError(null)
 
     if (Object.keys(nextErrors).length > 0) {
       return
     }
 
-    setIsSubmitted(true)
-    setForm(initialFormState)
+    if (!FORMSPREE_ENDPOINT) {
+      setSubmitError(
+        'Falta configurar el endpoint del formulario. Añade VITE_FORMSPREE_ENDPOINT en tu .env.local.',
+      )
+      return
+    }
+
+    setIsSubmitting(true)
+
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: form.name.trim(),
+          email: form.email.trim(),
+          message: form.message.trim(),
+        }),
+      })
+
+      if (!response.ok) {
+        throw new Error('Error enviando formulario')
+      }
+
+      setIsSubmitted(true)
+      setForm(initialFormState)
+    } catch {
+      setSubmitError(
+        'No se pudo enviar el mensaje ahora mismo. Intenta de nuevo en unos minutos.',
+      )
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -199,16 +237,21 @@ const ContactSection = () => {
 
           <button
             type="submit"
-            className="inline-flex items-center gap-2 rounded-full border border-[var(--color-violet)] bg-[var(--color-violet)] px-5 py-3 text-sm font-semibold text-white shadow-[0_0_16px_var(--color-violet-glow)] transition hover:scale-[1.02]"
+            disabled={isSubmitting}
+            className="inline-flex items-center gap-2 rounded-full border border-[var(--color-violet)] bg-[var(--color-violet)] px-5 py-3 text-sm font-semibold text-white shadow-[0_0_16px_var(--color-violet-glow)] transition hover:scale-[1.02] disabled:cursor-not-allowed disabled:opacity-65"
           >
             <Send size={15} />
-            Enviar mensaje
+            {isSubmitting ? 'Enviando...' : 'Enviar mensaje'}
           </button>
 
           {isSubmitted && !hasErrors ? (
             <p className="text-sm font-semibold text-[var(--color-lime)]">
-              Mensaje listo. Puedes contactarme por correo o Linkedin y te responderé pronto.
+              Mensaje enviado correctamente. Te responderé pronto.
             </p>
+          ) : null}
+
+          {submitError ? (
+            <p className="text-sm font-semibold text-red-400">{submitError}</p>
           ) : null}
         </motion.form>
       </div>
