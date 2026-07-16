@@ -83,10 +83,6 @@ const HeroSection = ({ onNavigate }: HeroSectionProps) => {
   )
 
   useEffect(() => {
-    inputRef.current?.focus()
-  }, [])
-
-  useEffect(() => {
     const historyContainer = historyRef.current
     if (historyContainer) {
       historyContainer.scrollTop = historyContainer.scrollHeight
@@ -358,7 +354,6 @@ const HeroSection = ({ onNavigate }: HeroSectionProps) => {
               </span>
               <div>
                 <h3 className="text-lg font-semibold text-[var(--color-ink)]">Foto de perfil</h3>
-                <p className="text-xs text-[var(--color-muted)]">Espacio para tu foto</p>
               </div>
             </div>
 
