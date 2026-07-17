@@ -358,7 +358,12 @@ const HeroSection = ({ onNavigate }: HeroSectionProps) => {
             </div>
 
             <div className="relative overflow-hidden rounded-2xl border border-[var(--color-glass-border)] bg-[linear-gradient(145deg,rgba(124,58,237,0.22),rgba(34,211,238,0.16),rgba(163,230,53,0.14))] p-4">
-              <div className="aspect-[4/5] rounded-xl border border-dashed border-[var(--color-glass-border)] bg-[var(--color-panel)]/40" />
+              <img
+                src={`${import.meta.env.BASE_URL}profile-photo.jpg`}
+                alt="Foto de perfil de Nicolas"
+                className="aspect-[4/5] w-full rounded-xl object-cover"
+                loading="lazy"
+              />
               <span className="absolute right-4 bottom-4 inline-flex items-center gap-1 rounded-full border border-[var(--color-glass-border)] bg-[var(--color-panel)]/70 px-3 py-1 text-xs font-semibold text-[var(--color-lime)]">
                 <GraduationCap size={12} />
                 La Luisiana, Sevilla
